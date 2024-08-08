@@ -1,5 +1,5 @@
 // import { lines } from "./poem"
-import React, { useState } from "react"
+import { useState } from "react"
 
 function App() {
   const poem: Poem = [
@@ -104,14 +104,19 @@ function App() {
 
   return (
     <>
-      <div className="w-screen h-screen bg-gray-400"
+      <div className="w-screen h-screen p-8"
         onClick={onClick}
       >
-        {linesToPrint.map((x) => <p>{x.content}</p>)}
+        {linesToPrint.map((x) => <p className="p-2 font-mono">{x.content}</p>)}
+        <div>
+          <br></br>
+          <br></br>
+          <button className="border border-gray-200 hover:bg-gray-400 rounded-md h-8 w-16 font-mono bg-gray-200">
+            <a href="/">reset</a>
+          </button>
+        </div>
       </div>
-      <div>
-        <button>next line</button>
-      </div >
+
     </>
   )
 
